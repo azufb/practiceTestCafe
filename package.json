@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/azufb/practiceTestCafe#readme",
   "dependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   },
