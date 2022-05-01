@@ -1,0 +1,10 @@
+{
+    "src": ["./tests/**/**.js"],
+    "skipJsErrors": true,
+    "concurrency": 1,
+    "compilerOptions": {
+        "typescript": {
+            "configPath": "../tsconfig.json"
+        }
+    }
+}
