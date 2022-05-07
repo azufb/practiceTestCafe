@@ -1,3 +1,8 @@
+import { Routing } from './components/Routing';
 export const App = () => {
-    return <h1>React TypeScript</h1>
+    return (
+        <div>
+            <Routing />
+        </div>
+    )
 }
