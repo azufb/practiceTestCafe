@@ -14,6 +14,21 @@ export const modalBack = style({
 
 export const modal = style({
     backgroundColor: '#FFFFFF',
-    width: '50vw',
-    height: '50vh'
+    width: '25vw',
+    height: '50vh',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+});
+
+export const modalText = style({
+    fontWeight: 'bold',
+    fontSize: '2em',
+    margin: '0'
+});
+
+export const modalEmoji = style({
+    fontSize: '2em',
+    margin: '0'
 });

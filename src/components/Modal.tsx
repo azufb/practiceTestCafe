@@ -1,4 +1,4 @@
-import { modalBack, modal } from '../styles/modal.css';
+import { modalBack, modal, modalText, modalEmoji } from '../styles/modal.css';
 
 export const Modal = (props: any) => {
     const closeModal = () => {
@@ -10,7 +10,9 @@ export const Modal = (props: any) => {
             { props.show ? (
                 <div className={modalBack}>
                     <div className={modal}>
-                        <p>Modal</p>
+                        <p className={modalEmoji}>🔥🔥🔥🔥</p>
+                        <p className={modalText}>Modalが出現!!</p>
+                        <p className={modalEmoji}>🔥🔥🔥🔥</p>
                     </div>
                 </div>
             ) : (
