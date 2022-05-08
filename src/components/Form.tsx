@@ -11,8 +11,10 @@ type Inputs = {
 };
 
 export const Form = () => {
-    const { register, handleSubmit } = useForm<Inputs>({
+    const { register, handleSubmit, getValues, watch, formState: { errors } } = useForm<Inputs>({
         defaultValues: {
+            name: '',
+            age: 0,
             dummy1: 'ダミーテキスト1',
             dummy2: 'ダミーテキスト2',
             dummy3: 'ダミーテキスト3'
@@ -22,23 +24,35 @@ export const Form = () => {
         console.log(data);
     }
 
+    const watchNullFields = watch(['name', 'age', 'dummy1', 'dummy2', 'dummy3']).some(value => value === '' || value === null);
+
+    const disabledControllFunc = () => {
+        if (watchNullFields || getValues('age') === 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    console.log(getValues(['name', 'age', 'dummy1', 'dummy2', 'dummy3']));
+
     return (
         <div>
             <div className={contents}>
                 <h1>This is Form!</h1>
                 <form onSubmit={handleSubmit(onSubmit)} className={formArea}>
                     <label className={formLabel}>名前:</label>
-                    <input {...register('name')} className={formInput} />
+                    <input {...register('name', {required: true})} className={formInput} />
                     <label className={formLabel}>年齢:</label>
-                    <input {...register('age')} className={formInput} />
+                    <input {...register('age', {required: true})} className={formInput} />
                     <label className={formLabel}>ダミー1:</label>
-                    <input {...register('dummy1')} className={formInput} />
+                    <input {...register('dummy1', {required: true})} className={formInput} />
                     <label className={formLabel}>ダミー2:</label>
-                    <input {...register('dummy2')} className={formInput} />
+                    <input {...register('dummy2', {required: true})} className={formInput} />
                     <label className={formLabel}>ダミー3:</label>
-                    <input {...register('dummy3')} className={formInput} />
+                    <input {...register('dummy3', {required: true})} className={formInput} />
 
-                    <input type='submit' className={submitBtn} />
+                    <input type='submit' disabled={disabledControllFunc()} className={submitBtn} />
                 </form>
             </div>
         </div>
