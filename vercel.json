@@ -1,13 +1,3 @@
 {
-    "rewrites": [{ "source": "/(.*)", "destination": "/" }],
-    "redirects": [
-        {
-            "source": "/form",
-            "destination": "/form"
-        },
-        {
-            "source": "/buttons",
-            "destination": "/buttons"
-        }
-    ]
+    "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
