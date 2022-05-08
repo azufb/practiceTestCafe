@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "webpack serve --config webpack.config.js --open",
+    "start": "webpack serve --config webpack.config.js --open --history-api-fallback",
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
