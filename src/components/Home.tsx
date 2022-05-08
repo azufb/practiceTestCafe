@@ -5,6 +5,7 @@ export const Home = () => {
         <div>
             <div className={contents}>
                 <h1>This is Home!</h1>
+                <p>Home画面です。</p>
             </div>
         </div>
     )
