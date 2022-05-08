@@ -1,15 +1,17 @@
 import { style } from '@vanilla-extract/css';
 
 export const navigation = style({
-    textAlign: 'center'
+    display: 'flex'
 });
 
 export const menu = style({
     backgroundColor: '#1B202E',
     color: '#FFFFFF',
-    borderRadius: '10px 10px 0 0',
+    borderRadius: '20px 20px 0 0',
     padding: '1rem',
-    textDecoration: 'none'
+    textDecoration: 'none',
+    width: '100%',
+    textAlign: 'center'
 });
 
 export const activeMenu = style({
