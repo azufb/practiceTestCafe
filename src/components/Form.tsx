@@ -1,4 +1,5 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { formArea, formLabel, formInput, submitBtn } from '../styles/form.css';
 
 type Inputs = {
     name: string,
@@ -11,8 +12,6 @@ type Inputs = {
 export const Form = () => {
     const { register, handleSubmit } = useForm<Inputs>({
         defaultValues: {
-            name: '山田花子',
-            age: 18,
             dummy1: 'ダミーテキスト1',
             dummy2: 'ダミーテキスト2',
             dummy3: 'ダミーテキスト3'
@@ -25,19 +24,19 @@ export const Form = () => {
     return (
         <div>
             <h1>This is Form!</h1>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <label>名前:</label>
-                <input {...register('name')} />
-                <label>年齢:</label>
-                <input  {...register('age')} />
-                <label>ダミー1:</label>
-                <input  {...register('dummy1')} />
-                <label>ダミー2:</label>
-                <input  {...register('dummy2')} />
-                <label>ダミー3:</label>
-                <input  {...register('dummy3')} />
+            <form onSubmit={handleSubmit(onSubmit)} className={formArea}>
+                <label className={formLabel}>名前:</label>
+                <input {...register('name')} className={formInput} />
+                <label className={formLabel}>年齢:</label>
+                <input {...register('age')} className={formInput} />
+                <label className={formLabel}>ダミー1:</label>
+                <input {...register('dummy1')} className={formInput} />
+                <label className={formLabel}>ダミー2:</label>
+                <input {...register('dummy2')} className={formInput} />
+                <label className={formLabel}>ダミー3:</label>
+                <input {...register('dummy3')} className={formInput} />
 
-                <input type='submit' />
+                <input type='submit' className={submitBtn} />
             </form>
         </div>
     )
