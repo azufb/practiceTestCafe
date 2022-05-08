@@ -21,5 +21,5 @@ export const footer = style({
 });
 
 export const footerText = style({
-    marginBottom: '0.5rem'
+    margin: '0'
 });
