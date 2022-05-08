@@ -1,0 +1,12 @@
+{
+    "redirects": [
+        {
+            "source": "/form",
+            "destination": "/form"
+        },
+        {
+            "source": "/buttons",
+            "destination": "/buttons"
+        }
+    ]
+}
