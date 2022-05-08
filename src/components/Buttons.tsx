@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Modal } from './Modal';
 import { buttons } from '../styles/buttons.css';
+import { contents } from '../styles/common.css';
 
 export const Buttons = () => {
     const [show, setShow] = useState<Boolean>(false);
@@ -11,13 +12,15 @@ export const Buttons = () => {
 
     return (
         <div>
-            <h1>This is Buttons!</h1>
-            <div className={buttons}>
-                <button>ボタン1</button>
-                <button onClick={switchShowModal}>ボタン2</button>
-                <button>ボタン3</button>
+            <div className={contents}>
+                <h1>This is Buttons!</h1>
+                <div className={buttons}>
+                    <button>ボタン1</button>
+                    <button onClick={switchShowModal}>ボタン2</button>
+                    <button>ボタン3</button>
+                </div>
+                <Modal show={show} setShow={setShow} />
             </div>
-            <Modal show={show} setShow={setShow} />
         </div>
     )
 };

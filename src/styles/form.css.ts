@@ -2,7 +2,6 @@ import { style } from '@vanilla-extract/css';
 
 export const formArea = style({
     width: '50vw',
-    margin: '0 auto'
 });
 
 export const formLabel = style({

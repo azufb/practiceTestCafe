@@ -1,5 +1,11 @@
+import { contents } from '../styles/common.css';
+
 export const Home = () => {
     return (
-        <h1>This is Home!</h1>
+        <div>
+            <div className={contents}>
+                <h1>This is Home!</h1>
+            </div>
+        </div>
     )
 }

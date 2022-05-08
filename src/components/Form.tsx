@@ -1,5 +1,6 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { formArea, formLabel, formInput, submitBtn } from '../styles/form.css';
+import { contents } from '../styles/common.css';
 
 type Inputs = {
     name: string,
@@ -23,21 +24,23 @@ export const Form = () => {
 
     return (
         <div>
-            <h1>This is Form!</h1>
-            <form onSubmit={handleSubmit(onSubmit)} className={formArea}>
-                <label className={formLabel}>名前:</label>
-                <input {...register('name')} className={formInput} />
-                <label className={formLabel}>年齢:</label>
-                <input {...register('age')} className={formInput} />
-                <label className={formLabel}>ダミー1:</label>
-                <input {...register('dummy1')} className={formInput} />
-                <label className={formLabel}>ダミー2:</label>
-                <input {...register('dummy2')} className={formInput} />
-                <label className={formLabel}>ダミー3:</label>
-                <input {...register('dummy3')} className={formInput} />
+            <div className={contents}>
+                <h1>This is Form!</h1>
+                <form onSubmit={handleSubmit(onSubmit)} className={formArea}>
+                    <label className={formLabel}>名前:</label>
+                    <input {...register('name')} className={formInput} />
+                    <label className={formLabel}>年齢:</label>
+                    <input {...register('age')} className={formInput} />
+                    <label className={formLabel}>ダミー1:</label>
+                    <input {...register('dummy1')} className={formInput} />
+                    <label className={formLabel}>ダミー2:</label>
+                    <input {...register('dummy2')} className={formInput} />
+                    <label className={formLabel}>ダミー3:</label>
+                    <input {...register('dummy3')} className={formInput} />
 
-                <input type='submit' className={submitBtn} />
-            </form>
+                    <input type='submit' className={submitBtn} />
+                </form>
+            </div>
         </div>
     )
 }
