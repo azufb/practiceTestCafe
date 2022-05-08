@@ -17,5 +17,11 @@ export const formInput = style({
 export const submitBtn = style({
     display: 'block',
     width: '100%',
-    marginBottom: '2rem'
+    marginBottom: '2rem',
+    padding: '0.5rem 0'
+});
+
+export const activeSubmitBtn = style({
+    backgroundColor: '#0CB981',
+    color: '#FFFFFF'
 });
