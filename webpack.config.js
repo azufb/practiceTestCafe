@@ -38,8 +38,7 @@ module.exports = {
         filename: 'bundle.js',
     },
     performance: {
-        maxAssetSize: 500000,
-        maxEntrypointSize: 500000,
+        hints: false
     },
     mode: 'production',
     plugins: [
