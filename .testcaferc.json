@@ -1,5 +1,11 @@
 {
     "src": ["./tests/**/**.js"],
+    "screenshots": {
+        "path": "./tests/screenshots",
+        "takeOnFails": true,
+        "pathPattern": "${DATE}_${TIME}/failure/${FIXTURE}.png",
+        "fullPage": true
+    },
     "skipJsErrors": true,
     "concurrency": 1,
     "compilerOptions": {
