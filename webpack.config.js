@@ -40,7 +40,7 @@ module.exports = {
     performance: {
         hints: false
     },
-    mode: 'production',
+    mode: 'development',
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, './src/index.html'),
