@@ -5,7 +5,7 @@ export const testRunner = async () => {
     try {
         const runner = testcafe.createRunner();
 
-        const failedCount = await runner.src(["tests/test.js"]).browsers(["chrome"]).run();
+        const failedCount = await runner.src(["tests/test.ts"]).browsers(["chrome"]).run();
 
         console.log("Tests failed: " + failedCount);
     } finally {
