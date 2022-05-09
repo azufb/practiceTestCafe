@@ -17,9 +17,7 @@ export const contents = style({
 
 export const tabContents = style({
     height: '75vh',
-    borderRight: '2px solid #0CB981',
-    borderLeft: '2px solid #0CB981',
-    borderBottom: '2px solid #0CB981',
+    border: '2px solid #0CB981',
     boxSizing: 'border-box'
 });
 
