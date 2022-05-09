@@ -2,7 +2,8 @@ import { style } from '@vanilla-extract/css';
 
 export const buttons = style({
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'space-between'
+
 });
 
 export const button = style({

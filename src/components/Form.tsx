@@ -1,6 +1,6 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { formArea, formLabel, formInput, submitBtn, activeSubmitBtn } from '../styles/form.css';
-import { contents } from '../styles/common.css';
+import { contents, tabContents } from '../styles/common.css';
 
 type Inputs = {
     name: string,
@@ -37,8 +37,8 @@ export const Form = () => {
     console.log(getValues(['name', 'age', 'dummy1', 'dummy2', 'dummy3']));
 
     return (
-        <div>
-            <div className={contents}>
+        <>
+            <div className={`${contents} ${tabContents}`}>
                 <h1>This is Form!</h1>
                 <form onSubmit={handleSubmit(onSubmit)} className={formArea}>
                     <label className={formLabel}>名前:</label>
@@ -55,6 +55,6 @@ export const Form = () => {
                     <input type='submit' value='Submit' disabled={disabledControllFunc()} className={`${submitBtn} ${disabledControllFunc() ? '' : activeSubmitBtn }`} />
                 </form>
             </div>
-        </div>
+        </>
     )
 }
