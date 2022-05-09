@@ -17,9 +17,10 @@ export const contents = style({
 
 export const tabContents = style({
     height: '75vh',
-    borderRight: '1px solid #1B202E',
-    borderLeft: '1px solid #1B202E',
-    borderBottom: '1px solid #1B202E'
+    borderRight: '2px solid #0CB981',
+    borderLeft: '2px solid #0CB981',
+    borderBottom: '2px solid #0CB981',
+    boxSizing: 'border-box'
 });
 
 export const footer = style({
