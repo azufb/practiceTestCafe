@@ -1,5 +1,4 @@
 {
-    "src": ["./tests/**/**.js"],
     "screenshots": {
         "path": "./tests/screenshots",
         "takeOnFails": true,
@@ -10,7 +9,7 @@
     "concurrency": 1,
     "compilerOptions": {
         "typescript": {
-            "configPath": "../tsconfig.json"
+            "configPath": "testcafe_tsconfig.json"
         }
     }
 }
