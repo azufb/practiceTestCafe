@@ -1,9 +1,13 @@
 import { style } from '@vanilla-extract/css';
 
+export const pageTitle = style({
+    padding: ' 0 0.5rem'
+});
+
 export const buttons = style({
     display: 'flex',
-    justifyContent: 'space-between'
-
+    justifyContent: 'space-between',
+    padding: '0 0.5rem'
 });
 
 export const button = style({

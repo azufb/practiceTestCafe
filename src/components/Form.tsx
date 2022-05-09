@@ -1,5 +1,5 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { formArea, formLabel, formInput, submitBtn, activeSubmitBtn } from '../styles/form.css';
+import { pageTitle, formArea, formLabel, formInput, submitBtn, activeSubmitBtn } from '../styles/form.css';
 import { contents, tabContents } from '../styles/common.css';
 
 type Inputs = {
@@ -39,7 +39,7 @@ export const Form = () => {
     return (
         <>
             <div className={`${contents} ${tabContents}`}>
-                <h1>This is Form!</h1>
+                <h1 className={pageTitle}>This is Form!</h1>
                 <form onSubmit={handleSubmit(onSubmit)} className={formArea}>
                     <label className={formLabel}>名前:</label>
                     <input {...register('name', {required: true})} className={formInput} />

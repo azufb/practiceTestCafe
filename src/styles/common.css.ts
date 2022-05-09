@@ -19,7 +19,7 @@ export const tabContents = style({
     height: '75vh',
     borderRight: '1px solid #1B202E',
     borderLeft: '1px solid #1B202E',
-    borderBottom: '1px solid #1B202E',
+    borderBottom: '1px solid #1B202E'
 });
 
 export const footer = style({

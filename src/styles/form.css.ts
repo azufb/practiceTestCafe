@@ -1,7 +1,13 @@
 import { style } from '@vanilla-extract/css';
 
+export const pageTitle = style({
+    padding: '0 0.5rem'
+});
+
 export const formArea = style({
     width: '50vw',
+    padding: '0 0.5rem',
+    boxSizing: 'border-box'
 });
 
 export const formLabel = style({
