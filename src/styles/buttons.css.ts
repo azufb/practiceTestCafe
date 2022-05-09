@@ -20,11 +20,11 @@ export const button1 = style({
     color: '#FFFFFF'
 });
 
-export const button2 = style({
+export const buttonModal = style({
     backgroundColor: '#0CB981',
     color: '#FFFFFF'
 });
 
-export const button3 = style({
+export const button2 = style({
     backgroundColor: '#F2F9FF'
 })
