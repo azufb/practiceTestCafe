@@ -8,11 +8,11 @@ export const Modal = (props: any) => {
     return (
         <div onClick={closeModal}>
             { props.show ? (
-                <div className={modalBack}>
+                <div className={`${modalBack} test-modal`}>
                     <div className={modal}>
-                        <p className={modalEmoji}>🔥🔥🔥🔥</p>
+                        <span className={modalEmoji}>🔥🔥🔥🔥</span>
                         <p className={modalText}>Modalが出現!!</p>
-                        <p className={modalEmoji}>🔥🔥🔥🔥</p>
+                        <span className={modalEmoji}>🔥🔥🔥🔥</span>
                     </div>
                 </div>
             ) : (
