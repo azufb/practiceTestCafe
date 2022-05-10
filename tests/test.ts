@@ -1,5 +1,6 @@
 import { checkHomeTabContents } from './testCode/home/checkHomeTabContents';
 import { checkButtonsTabContents } from './testCode/buttons/checkButtonsTabContents';
+import { checkShowModal } from './testCode/buttons/checkShowModal';
 
 const fixtureName: string = 'Getting Started';
 const today = new Date();
@@ -15,10 +16,15 @@ fixture`${fixtureName}`.page`http://localhost:8080`;
 
 test('checkHomeTabContents', async (t: TestController) => {
     const screenshotPathName = `${dateDirectoryName}/checkHomeTabContents.png`;
-    await checkHomeTabContents(screenshotPathName);
+    await checkHomeTabContents(t, screenshotPathName);
 });
 
 test('checkButtonsTabContents', async (t: TestController) => {
     const screenshotPathName = `${dateDirectoryName}/checkButtonsTabContents.png`;
-    await checkButtonsTabContents(screenshotPathName);
+    await checkButtonsTabContents(t, screenshotPathName);
+});
+
+test('checkShowModal', async (t: TestController) => {
+    const screenshotPathName = `${dateDirectoryName}/checkShowModal.png`;
+    await checkShowModal(t, screenshotPathName);
 });
