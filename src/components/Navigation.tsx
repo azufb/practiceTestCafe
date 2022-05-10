@@ -4,12 +4,12 @@ import { contents } from '../styles/common.css';
 
 export const Navigation = () => {
     return (
-        <div>
+        <>
             <div className={`${contents} ${navigation}`}>
                 <CustomLink to='/'>Home</CustomLink>
                 <CustomLink to='form'>Form</CustomLink>
                 <CustomLink to='buttons'>Buttons</CustomLink>
             </div>
-        </div>
+        </>
     )
 };
