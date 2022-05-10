@@ -1,6 +1,6 @@
-import { Selector, t } from "testcafe";
+import { Selector } from "testcafe";
 
-export const checkHomeTabContents = async (screenshotPathName:string) => {
+export const checkHomeTabContents = async (t: any, screenshotPathName: string) => {
     const navTabs = await Selector('#root').find('div').nth(2);
     const homeTab = navTabs.child('a').nth(0);
     // タブの名前がHomeになっているか確認

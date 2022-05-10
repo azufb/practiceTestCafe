@@ -1,6 +1,6 @@
-import { Selector, t } from "testcafe";
+import { Selector } from "testcafe";
 
-export const checkButtonsTabContents = async (screenshotPathName: string) => {
+export const checkButtonsTabContents = async (t: any, screenshotPathName: string) => {
     const navTabs = await Selector('#root').find('div').nth(2);
     const buttonsTab = navTabs.child('a').nth(2);
 
