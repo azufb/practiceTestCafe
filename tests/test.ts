@@ -1,4 +1,5 @@
 import { checkHomeTabContents } from './testCode/home/checkHomeTabContents';
+import { checkFormTabContents } from './testCode/form/checkFormTabContents';
 import { checkButtonsTabContents } from './testCode/buttons/checkButtonsTabContents';
 import { checkShowModal } from './testCode/buttons/checkShowModal';
 import { checkDisappearedModal } from './testCode/buttons/checkDisappearedModal';
@@ -18,6 +19,11 @@ fixture`${fixtureName}`.page`http://localhost:8080`;
 test('checkHomeTabContents', async (t: TestController) => {
     const screenshotPathName = `${dateDirectoryName}/checkHomeTabContents.png`;
     await checkHomeTabContents(t, screenshotPathName);
+});
+
+test('checkFormTabContents', async (t: TestController) => {
+    const screenshotPathName = `${dateDirectoryName}/checkFormTabContents.png`;
+    await checkFormTabContents(t, screenshotPathName);
 });
 
 test('checkButtonsTabContents', async (t: TestController) => {
