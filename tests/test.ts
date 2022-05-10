@@ -1,6 +1,7 @@
 import { checkHomeTabContents } from './testCode/home/checkHomeTabContents';
 import { checkButtonsTabContents } from './testCode/buttons/checkButtonsTabContents';
 import { checkShowModal } from './testCode/buttons/checkShowModal';
+import { checkDisappearedModal } from './testCode/buttons/checkDisappearedModal';
 
 const fixtureName: string = 'Getting Started';
 const today = new Date();
@@ -27,4 +28,9 @@ test('checkButtonsTabContents', async (t: TestController) => {
 test('checkShowModal', async (t: TestController) => {
     const screenshotPathName = `${dateDirectoryName}/checkShowModal.png`;
     await checkShowModal(t, screenshotPathName);
+});
+
+test('checkDisappearedModal', async (t: TestController) => {
+    const screenshotPathName = `${dateDirectoryName}/checkDisappearedModal.png`;
+    await checkDisappearedModal(t, screenshotPathName);
 });
