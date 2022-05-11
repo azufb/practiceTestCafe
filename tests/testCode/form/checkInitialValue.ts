@@ -1,6 +1,6 @@
 import { Selector } from "testcafe";
 
-export const checkInitialValue = async (t: any, screenshotPathName: string) => {
+export const checkInitialValue = async (t: any, dateDirectoryName: string) => {
     const navTabs = await Selector('#root').find('div').nth(2);
     const formTab = navTabs.child('a').nth(1);
 
@@ -37,11 +37,19 @@ export const checkInitialValue = async (t: any, screenshotPathName: string) => {
         }
 
         await t.expect(inputForm).eql(initialValue);
-    }
 
-    // スクリーンショット
-    await t.takeScreenshot({
-        path: `${screenshotPathName}`,
-        fullPage: true
-    });
+        // スクリーンショット
+        await t.takeElementScreenshot(
+            await form.find(`input[name="${formName}"]`),
+            `${dateDirectoryName}/checkInitialValue/${formName}.png`,
+            {
+                crop: {
+                    top: 0,
+                    left: 0,
+                    bottom: -1,
+                    right: -1
+                }
+            }
+        )
+    }
 }
