@@ -3,6 +3,7 @@ import { checkFormTabContents } from './testCode/form/checkFormTabContents';
 import { checkSubmitButtonDisabled } from './testCode/form/checkSubmitButtonDisabled';
 import { checkInitialValue } from './testCode/form/checkInitialValue';
 import { typeForm } from './testCode/form/typeForm';
+import { checkButtonAvailable } from './testCode/form/checkButtonAvailable';
 import { checkButtonsTabContents } from './testCode/buttons/checkButtonsTabContents';
 import { checkShowModal } from './testCode/buttons/checkShowModal';
 import { checkDisappearedModal } from './testCode/buttons/checkDisappearedModal';
@@ -40,6 +41,11 @@ test('checkInitialValue', async (t: TestController) => {
 
 test('typeForm', async (t: TestController) => {
     await typeForm(t, dateDirectoryName);
+});
+
+test('checkButtonAvailable', async (t: TestController) => {
+    const screenshotPathName = `${dateDirectoryName}/checkButtonAvailable.png`;
+    await checkButtonAvailable(t, screenshotPathName);
 });
 
 test('checkButtonsTabContents', async (t: TestController) => {
