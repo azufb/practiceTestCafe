@@ -2,6 +2,7 @@ import { checkHomeTabContents } from './testCode/home/checkHomeTabContents';
 import { checkFormTabContents } from './testCode/form/checkFormTabContents';
 import { checkSubmitButtonDisabled } from './testCode/form/checkSubmitButtonDisabled';
 import { checkInitialValue } from './testCode/form/checkInitialValue';
+import { typeForm } from './testCode/form/typeForm';
 import { checkButtonsTabContents } from './testCode/buttons/checkButtonsTabContents';
 import { checkShowModal } from './testCode/buttons/checkShowModal';
 import { checkDisappearedModal } from './testCode/buttons/checkDisappearedModal';
@@ -35,6 +36,10 @@ test('checkSubmitButtonDisabled', async (t: TestController) => {
 
 test('checkInitialValue', async (t: TestController) => {
     await checkInitialValue(t, dateDirectoryName);
+});
+
+test('typeForm', async (t: TestController) => {
+    await typeForm(t, dateDirectoryName);
 });
 
 test('checkButtonsTabContents', async (t: TestController) => {
