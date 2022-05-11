@@ -9,11 +9,11 @@ import { checkDisappearedModal } from './testCode/buttons/checkDisappearedModal'
 const fixtureName: string = 'Getting Started';
 const today = new Date();
 const year = today.getFullYear();
-const month = today.getMonth();
-const date = today.getDate();
-const hour = today.getHours();
-const minute = today.getMinutes();
-const second = today.getSeconds();
+const month = (today.getMonth()+1).toString().padStart(2, '0');
+const date = (today.getDate()).toString().padStart(2, '0');
+const hour = (today.getHours()).toString().padStart(2, '0');
+const minute = (today.getMinutes()).toString().padStart(2, '0');
+const second = (today.getSeconds()).toString().padStart(2, '0');
 const dateDirectoryName: string = `${year}-${month}-${date}_${hour}-${minute}-${second}`;
 
 fixture`${fixtureName}`.page`http://localhost:8080`;
@@ -34,8 +34,7 @@ test('checkSubmitButtonDisabled', async (t: TestController) => {
 });
 
 test('checkInitialValue', async (t: TestController) => {
-    const screenshotPathName = `${dateDirectoryName}/checkInitialValue.png`;
-    await checkInitialValue(t, screenshotPathName);
+    await checkInitialValue(t, dateDirectoryName);
 });
 
 test('checkButtonsTabContents', async (t: TestController) => {
