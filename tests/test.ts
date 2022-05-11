@@ -1,5 +1,6 @@
 import { checkHomeTabContents } from './testCode/home/checkHomeTabContents';
 import { checkFormTabContents } from './testCode/form/checkFormTabContents';
+import { checkSubmitButtonDisabled } from './testCode/form/checkSubmitButtonDisabled';
 import { checkButtonsTabContents } from './testCode/buttons/checkButtonsTabContents';
 import { checkShowModal } from './testCode/buttons/checkShowModal';
 import { checkDisappearedModal } from './testCode/buttons/checkDisappearedModal';
@@ -24,6 +25,11 @@ test('checkHomeTabContents', async (t: TestController) => {
 test('checkFormTabContents', async (t: TestController) => {
     const screenshotPathName = `${dateDirectoryName}/checkFormTabContents.png`;
     await checkFormTabContents(t, screenshotPathName);
+});
+
+test('checkSubmitButtonDisabled', async (t: TestController) => {
+    const screenshotPathName = `${dateDirectoryName}/checkSubmitButtonDisabled.png`;
+    await checkSubmitButtonDisabled(t, screenshotPathName);
 });
 
 test('checkButtonsTabContents', async (t: TestController) => {
