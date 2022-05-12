@@ -1,10 +1,9 @@
 import { Selector } from "testcafe";
 
 export const checkFormTabContents = async (t: TestController, pathName: string) => {
+    // 2つめのタブをクリックしてページ遷移する
     const navTabs = Selector('#root').find('div').nth(2);
     const formTab = navTabs.child('a').nth(1);
-
-    // 2つめのタブをクリックしてページ遷移する
     await t.click(formTab);
 
     // 表示されているコンテンツのタイトルがThis is Form!になっているか確認
