@@ -1,3 +1,4 @@
+import { createScreenshotDirectory } from './util/createScreenshotDirectory';
 import { checkHomeTabContents } from './testCode/home/checkHomeTabContents';
 import { checkFormTabContents } from './testCode/form/checkFormTabContents';
 import { checkSubmitButtonDisabled } from './testCode/form/checkSubmitButtonDisabled';
@@ -8,57 +9,52 @@ import { checkButtonsTabContents } from './testCode/buttons/checkButtonsTabConte
 import { checkShowModal } from './testCode/buttons/checkShowModal';
 import { checkDisappearedModal } from './testCode/buttons/checkDisappearedModal';
 
-const fixtureName: string = 'Getting Started';
-const today = new Date();
-const year = today.getFullYear();
-const month = (today.getMonth()+1).toString().padStart(2, '0');
-const date = (today.getDate()).toString().padStart(2, '0');
-const hour = (today.getHours()).toString().padStart(2, '0');
-const minute = (today.getMinutes()).toString().padStart(2, '0');
-const second = (today.getSeconds()).toString().padStart(2, '0');
-const dateDirectoryName: string = `${year}-${month}-${date}_${hour}-${minute}-${second}`;
+const fixtureName: string = 'TestCaféでE2Eテスト!';
+const pageUrl: string = 'http://localhost:8080';
 
-fixture`${fixtureName}`.page`http://localhost:8080`;
+fixture`${fixtureName}`.page`${pageUrl}`;
 
 test('checkHomeTabContents', async (t: TestController) => {
-    const screenshotPathName = `${dateDirectoryName}/checkHomeTabContents.png`;
-    await checkHomeTabContents(t, screenshotPathName);
+    const screenshotPathName = createScreenshotDirectory('checkHomeTabContents');
+    await checkHomeTabContents(t, screenshotPathName.singlePathName);
 });
 
 test('checkFormTabContents', async (t: TestController) => {
-    const screenshotPathName = `${dateDirectoryName}/checkFormTabContents.png`;
-    await checkFormTabContents(t, screenshotPathName);
+    const screenshotPathName = createScreenshotDirectory('checkFormTabContents');
+    await checkFormTabContents(t, screenshotPathName.singlePathName);
 });
 
 test('checkSubmitButtonDisabled', async (t: TestController) => {
-    const screenshotPathName = `${dateDirectoryName}/checkSubmitButtonDisabled.png`;
-    await checkSubmitButtonDisabled(t, screenshotPathName);
+    const screenshotPathName = createScreenshotDirectory('checkSubmitButtonDisabled');
+    await checkSubmitButtonDisabled(t, screenshotPathName.singlePathName);
 });
 
 test('checkInitialValue', async (t: TestController) => {
-    await checkInitialValue(t, dateDirectoryName);
+    const screenshotPathName = createScreenshotDirectory('checkInitialValue');
+    await checkInitialValue(t, screenshotPathName.pathDirectory);
 });
 
 test('typeForm', async (t: TestController) => {
-    await typeForm(t, dateDirectoryName);
+    const screenshotPathName = createScreenshotDirectory('typeForm');
+    await typeForm(t, screenshotPathName.pathDirectory);
 });
 
 test('checkButtonAvailable', async (t: TestController) => {
-    const screenshotPathName = `${dateDirectoryName}/checkButtonAvailable.png`;
-    await checkButtonAvailable(t, screenshotPathName);
+    const screenshotPathName = createScreenshotDirectory('checkButtonAvailable');
+    await checkButtonAvailable(t, screenshotPathName.singlePathName);
 });
 
 test('checkButtonsTabContents', async (t: TestController) => {
-    const screenshotPathName = `${dateDirectoryName}/checkButtonsTabContents.png`;
-    await checkButtonsTabContents(t, screenshotPathName);
+    const screenshotPathName = createScreenshotDirectory('checkButtonsTabContents');
+    await checkButtonsTabContents(t, screenshotPathName.singlePathName);
 });
 
 test('checkShowModal', async (t: TestController) => {
-    const screenshotPathName = `${dateDirectoryName}/checkShowModal.png`;
-    await checkShowModal(t, screenshotPathName);
+    const screenshotPathName = createScreenshotDirectory('checkShowModal');
+    await checkShowModal(t, screenshotPathName.singlePathName);
 });
 
 test('checkDisappearedModal', async (t: TestController) => {
-    const screenshotPathName = `${dateDirectoryName}/checkDisappearedModal.png`;
-    await checkDisappearedModal(t, screenshotPathName);
+    const screenshotPathName = createScreenshotDirectory('checkDisappearedModal');
+    await checkDisappearedModal(t, screenshotPathName.singlePathName);
 });
