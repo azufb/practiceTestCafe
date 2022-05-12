@@ -1,20 +1,19 @@
 import { Selector } from "testcafe";
+import { findTab } from "../common/findTab";
 
 export const checkInitialValue = async (t: any, dateDirectoryName: string) => {
-    const navTabs = await Selector('#root').find('div').nth(2);
-    const formTab = navTabs.child('a').nth(1);
-
     // 2つめのタブをクリックしてページ遷移する
+    const formTab = findTab(1);
     await t.click(formTab);
 
     // フォームの初期値を確認
-    const pageContents = await Selector('#root').find('div').nth(2).nextSibling(0);
-    const form = await pageContents.child('form');
-    const formNames = ['name', 'age', 'dummy1', 'dummy2', 'dummy3'];
+    const pageContents = Selector('#root').find('div').nth(2).nextSibling(0);
+    const form = pageContents.child('form');
+    const formNames: string[] = ['name', 'age', 'dummy1', 'dummy2', 'dummy3'];
     
     for await (const formName of formNames) {
-        let initialValue;
-        const inputForm = await form.find(`input[name="${formName}"]`).value;
+        let initialValue: string = '';
+        const inputForm = form.find(`input[name="${formName}"]`).value;
 
         switch (formName) {
             case 'name':
@@ -40,7 +39,7 @@ export const checkInitialValue = async (t: any, dateDirectoryName: string) => {
 
         // スクリーンショット
         await t.takeElementScreenshot(
-            await form.find(`input[name="${formName}"]`),
+            form.find(`input[name="${formName}"]`),
             `${dateDirectoryName}/checkInitialValue/${formName}.png`,
             {
                 crop: {
