@@ -1,6 +1,6 @@
 import { Selector } from "testcafe";
 
-export const checkFormTabContents = async (t: any, screenshotPathName: string) => {
+export const checkFormTabContents = async (t: TestController, screenshotPathName: string) => {
     const navTabs = Selector('#root').find('div').nth(2);
     const formTab = navTabs.child('a').nth(1);
 

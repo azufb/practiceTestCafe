@@ -1,7 +1,7 @@
 import { Selector } from "testcafe";
 import { findTab } from "../common/findTab";
 
-export const checkButtonsTabContents = async (t: any, screenshotPathName: string) => {
+export const checkButtonsTabContents = async (t: TestController, screenshotPathName: string) => {
     // 3つめのタブをクリックしてページ遷移する
     const buttonsTab = findTab(2);
     await t.click(buttonsTab);

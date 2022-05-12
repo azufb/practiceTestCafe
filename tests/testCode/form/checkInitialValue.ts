@@ -1,7 +1,7 @@
 import { Selector } from "testcafe";
 import { findTab } from "../common/findTab";
 
-export const checkInitialValue = async (t: any, dateDirectoryName: string) => {
+export const checkInitialValue = async (t: TestController, dateDirectoryName: string) => {
     // 2つめのタブをクリックしてページ遷移する
     const formTab = findTab(1);
     await t.click(formTab);
