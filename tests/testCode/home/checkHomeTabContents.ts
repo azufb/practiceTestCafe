@@ -1,6 +1,6 @@
 import { Selector } from "testcafe";
 
-export const checkHomeTabContents = async (t: TestController, screenshotPathName: string) => {
+export const checkHomeTabContents = async (t: TestController, pathName: string) => {
     // タブの名前がHomeになっているか確認
     const navTabs = Selector('#root').find('div').nth(2);
     const homeTab = navTabs.child('a').nth(0);
@@ -16,7 +16,7 @@ export const checkHomeTabContents = async (t: TestController, screenshotPathName
 
     // スクリーンショット
     await t.takeScreenshot({
-        path: `${screenshotPathName}`,
+        path: `${pathName}`,
         fullPage: true
     });
 };

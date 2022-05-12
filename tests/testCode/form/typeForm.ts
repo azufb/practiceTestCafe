@@ -1,7 +1,7 @@
 import { Selector } from "testcafe";
 import { findTab } from "../common/findTab";
 
-export const typeForm = async (t: TestController, dateDirectoryName: string) => {
+export const typeForm = async (t: TestController, directoryName: string) => {
     // 2つめのタブをクリックしてページ遷移する
     const formTab = findTab(1);
     await t.click(formTab);
@@ -41,7 +41,7 @@ export const typeForm = async (t: TestController, dateDirectoryName: string) => 
         // スクリーンショット
         await t.takeElementScreenshot(
             form.find(`input[name="${formName}"]`),
-            `${dateDirectoryName}/typeForm/${formName}.png`,
+            `${directoryName}${formName}.png`,
             {
                 crop: {
                     top: 0,

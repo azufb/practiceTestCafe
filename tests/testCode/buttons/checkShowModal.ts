@@ -1,7 +1,7 @@
 import { Selector } from "testcafe";
 import { findTab } from "../common/findTab";
 
-export const checkShowModal = async (t: TestController, screenshotPathName: string) => {
+export const checkShowModal = async (t: TestController, pathName: string) => {
     // 3つめのタブをクリックしてページ遷移する
     const buttonsTab = findTab(2);
     await t.click(buttonsTab);
@@ -21,7 +21,7 @@ export const checkShowModal = async (t: TestController, screenshotPathName: stri
 
     // スクリーンショット
     await t.takeScreenshot({
-        path: `${screenshotPathName}`,
+        path: `${pathName}`,
         fullPage: true
     });
 }

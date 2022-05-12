@@ -1,6 +1,6 @@
 import { Selector } from "testcafe";
 
-export const checkFormTabContents = async (t: TestController, screenshotPathName: string) => {
+export const checkFormTabContents = async (t: TestController, pathName: string) => {
     const navTabs = Selector('#root').find('div').nth(2);
     const formTab = navTabs.child('a').nth(1);
 
@@ -14,7 +14,7 @@ export const checkFormTabContents = async (t: TestController, screenshotPathName
 
     // スクリーンショット
     await t.takeScreenshot({
-        path: `${screenshotPathName}`,
+        path: `${pathName}`,
         fullPage: true
     });
 }
