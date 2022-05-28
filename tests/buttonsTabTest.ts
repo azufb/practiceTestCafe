@@ -4,7 +4,7 @@ import { checkShowModal } from './testCode/buttons/checkShowModal';
 import { checkDisappearedModal } from './testCode/buttons/checkDisappearedModal';
 
 const fixtureName: string = 'TestCaféでE2Eテスト!~Buttonsタブ~';
-const pageUrl: string = 'http://localhost:8080';
+const pageUrl: string = 'https://practice-test-cafe.vercel.app/';
 const today = new Date();
 
 fixture`${fixtureName}`.page`${pageUrl}`;

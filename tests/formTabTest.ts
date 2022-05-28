@@ -6,7 +6,7 @@ import { typeForm } from './testCode/form/typeForm';
 import { checkButtonAvailable } from './testCode/form/checkButtonAvailable';
 
 const fixtureName: string = 'TestCaféでE2Eテスト!~Formタブ~';
-const pageUrl: string = 'http://localhost:8080';
+const pageUrl: string = 'https://practice-test-cafe.vercel.app/';
 const today = new Date();
 
 fixture`${fixtureName}`.page`${pageUrl}`;
