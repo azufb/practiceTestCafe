@@ -9,7 +9,7 @@ export const checkButtonsTabContents = async (t: TestController, pathName: strin
     // 表示されているコンテンツのタイトルがThis is Buttons!になっているか確認
     const pageContents = Selector('#root').find('div').nth(2).nextSibling(0);
     const pageTitle = pageContents.child('h1').innerText;
-    await t.expect(pageTitle).eql('This is Buttons!');
+    await t.expect(pageTitle).eql('Click buttons!');
 
     // スクリーンショット
     await t.takeScreenshot({

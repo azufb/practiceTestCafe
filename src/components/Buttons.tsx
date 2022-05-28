@@ -13,7 +13,7 @@ export const Buttons = () => {
     return (
         <>
             <div className={`${contents} ${tabContents}`}>
-                <h1 className={pageTitle}>This is Buttons!</h1>
+                <h1 className={pageTitle}>Click buttons!</h1>
                 <div className={buttons}>
                     <button className={`${button} ${button1}`}>ボタン1</button>
                     <button onClick={switchShowModal} className={`${button} ${buttonModal}`}>モーダル</button>
